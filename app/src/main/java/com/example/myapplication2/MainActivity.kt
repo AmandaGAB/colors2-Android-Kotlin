@@ -36,8 +36,12 @@ class MainActivity : AppCompatActivity() {
 
     inner class OnChange: SeekBar.OnSeekBarChangeListener{
         override fun onProgressChanged(seekBar:SeekBar?, progress:Int, fromUser: Boolean){
+
+            //layout.setBackgroundColor(Color.rgb(seekRed.progress, seekGreen.progress,seekBlue.progress))
             layout.setBackgroundColor(Color.rgb(seekRed.progress, seekGreen.progress,seekBlue.progress))
-            trgb.text = "# "+seekRed.progress.toString()+""+seekGreen.progress.toString()+""+seekBlue.progress.toString()
+            var formato = String.format("#%02X%02X%02X", seekRed.progress, seekGreen.progress, seekBlue.progress)
+            trgb.text = formato
+            //trgb.text = "# "+seekRed.progress.toString()+""+seekGreen.progress.toString()+""+seekBlue.progress.toString()
 
         }
 
